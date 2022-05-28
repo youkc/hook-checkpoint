@@ -1,16 +1,16 @@
 import "../App.css";
 import React from "react";
+import { Link } from "react-router-dom";
 
 const MovieCard = ({ element }) => {
+
   return (
-    <div className="col-md-4">
-      <div class="card mb-4">
-        <img src={element.posterurl} className="card-img-top" alt="" />
-        <div class="card-body">
-          <h5 class="card-title">{element.name}</h5>
-          <p class="card-text">{element.description}</p>
+    <div className="col-md-4 mb-5">
+      <div className="movie-card">
+        <img src={element.posterurl} alt="" className="card-img-top mb-3" />
+        <p>{element.description}</p>
           <p className="rating">Note: {element.rating} &#9733;</p>
-        </div>
+        <Link className="btn btn-primary" to={"/detail/"+element.id}>Read more</Link>
       </div>
     </div>
   );

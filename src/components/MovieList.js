@@ -10,13 +10,14 @@ const MovieList = ({ movie }) => {
 
   return (
     <div>
+    <h2>Liste des films</h2>
       <Filter filterText={filterText}  />
       <div className="row">
         {movie.filter(
             (movie) =>
               movie.name.toLowerCase().includes(text.toLowerCase())
           )
-          .map((el) => <MovieCard element={el} />)
+          .map((movie) => <MovieCard element={movie} key={movie.id} />)
           .reverse()}
       </div>
     </div>
